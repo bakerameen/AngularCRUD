@@ -17,7 +17,7 @@
       </div> -->
       
       <!-- bind the ngModel directive to employee object  - Binding Angular form to our own model class -->
-      <div class="form-group jhfdhffhfh" [class.was-validated]="fullNameControl.invalid && fullNameControl.touched">
+      <div class="form-group" [class.was-validated]="fullNameControl.invalid && fullNameControl.touched">
           <label for="name">Name</label>
           <input required type="text" class="form-control" id="name" placeholder="Enter The Name" name="name" [(ngModel)]="employee.name" #fullNameControl="ngModel">
           <div class="invalid-feedback">
