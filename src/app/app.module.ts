@@ -20,6 +20,7 @@ const appRoutes: Routes = [
     component: CreateEmployeeComponent,
     canDeactivate: [CreateEmployeeCanDeactivateGuardService]
   },
+  { path: 'employees/:id', component: EmployeeDetailComponent},
   { path: '', redirectTo: '/list', pathMatch: 'full' }
 ];
 

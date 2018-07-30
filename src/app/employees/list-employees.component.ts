@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from '../model/employee.model';
 // Import EmployeeService
 import { EmployeeService } from './employee.service';
+import { Router, Route } from '@angular/router';
 
 @Component({
   selector: 'app-list-employees',
@@ -11,7 +12,7 @@ import { EmployeeService } from './employee.service';
 export class ListEmployeesComponent implements OnInit {
 employees: Employee[];
 
-  constructor(private _employeeService: EmployeeService) {}
+  constructor(private _employeeService: EmployeeService, private _route: Router) {}
 
   ngOnInit() {
     // before Observable
@@ -20,6 +21,10 @@ employees: Employee[];
         this.employees = empList;
     });
 
+  }
+
+  displayEmployee(employeeId: number) {
+    this._route.navigate(['employees', employeeId]);
   }
 
 }

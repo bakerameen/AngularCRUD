@@ -1,5 +1,7 @@
 <div class="row">
   <div class="col-sm-6" *ngFor="let employee of employees" style="margin-bottom: 5px">
-    <app-display-employee [employee]="employee"></app-display-employee>
+    <div (click)="displayEmployee(employee.id)" class="pointerCursor">
+      <app-display-employee [employee]="employee"></app-display-employee>
+    </div>
   </div>
 </div>
