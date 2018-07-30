@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Department } from '../model/department.model';
 import { Employee } from '../model/employee.model';
@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CreateEmployeeComponent implements OnInit {
 // selected
+@ViewChild('employeeForm') public createEmployeeForm: NgForm;
 gender = 'male';
 previewPhoto = false;
 PhotoPath = '';
