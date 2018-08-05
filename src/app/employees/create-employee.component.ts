@@ -54,6 +54,7 @@ departments: Department[] = [
 
   saveEmployee() {
     this._employeeService.save(this.employee);
+    this.createEmployeeForm.reset();
     this._route.navigate(['list']);
   }
 

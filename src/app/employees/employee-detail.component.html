@@ -1,3 +1,25 @@
-<p>
-  employee-detail works!
-</p>
+<div class="card">
+  <div class="card-header">{{employee.name}}</div>
+  <img class="card-img-top imgClass" src="{{employee.photoPath}}" alt="{{employee.name}}">
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <span>Gender: </span>{{employee.gender}}</li>
+      <li class="list-group-item">
+        <span>Date of Birth: </span>{{employee.dateOfBirth}}</li>
+      <li class="list-group-item">
+        <span>contactPreference: </span>{{employee.contactPreference}}</li>
+      <li class="list-group-item">
+        <span>Email: </span>{{employee.email}}</li>
+      <li class="list-group-item">
+        <span>Department: </span>{{employee.department}}</li>
+      <li class="list-group-item">
+        <span>Is Acive: </span>{{employee.isActive}}</li>
+    </ul>
+  </div>
+  <div class="card-footer text-muted">
+    <!-- <a class="btn btn-primary" routerLink="/list">Back to List </a> -->
+    <a class="btn btn-primary" [routerLink]="['/list', {id: employee.id}]">Back to List </a>
+    <a class="btn btn-primary pull-right" (click)="getNextEmployee()">View Next Employee </a>    
+  </div>
+</div>

@@ -60,6 +60,10 @@ export class EmployeeService {
             .catch(this.handleError);
     }
 
+    getEmployee(id: number): Employee {
+        return this.listEmployees.find(e => e.id === id);
+    }
+
     private handleError(errorResponse: HttpErrorResponse) {
         if (errorResponse.error instanceof ErrorEvent) {
             console.error('Client Side Error :', errorResponse.error.message);
